@@ -1,5 +1,5 @@
 async function goosult(sq) {
-var page = await fetch("https://cors-bypass-app.herokuapp.com/get?url=https://www.google.com/search?q=" + encodeURIComponent(sq));
+var page = await fetch(location.protocol + "//cors-bypass-app.herokuapp.com/get?url=https://www.google.com/search?q=" + encodeURIComponent(sq));
 page = await page.text();
 
 var dom = new DOMParser().parseFromString(page, "text/html")
