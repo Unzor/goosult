@@ -12,7 +12,9 @@ var all_element_links = Array.from(dom.querySelectorAll("h3")).map(x => x.parent
 
 all_elements.forEach(function(en, index){
   if (!en.startsWith("<span ") && !en.endsWith("</span>") && en !== "Videos" && en !== "Images" && en !== "Top stories" && en !== "" && all_element_links[index]) {
-    e2.push({header: en, link: decodeURIComponent(all_element_links[index].split("?q=").pop().split("&").shift())});
+    var txt = document.createElement("textarea");
+    txt.innerHTML = en;
+    e2.push({header: txt.value, link: decodeURIComponent(all_element_links[index].split("?q=").pop().split("&").shift())});
   }
 })
 
